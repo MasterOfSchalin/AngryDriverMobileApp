@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87A62DDC1CAEFE6A00E22512 /* MeasurementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62DDB1CAEFE6A00E22512 /* MeasurementViewController.swift */; };
+		87A62DDE1CAEFEA700E22512 /* RateMeasurementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62DDD1CAEFEA700E22512 /* RateMeasurementViewController.swift */; };
+		87A62DE01CAEFEDF00E22512 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62DDF1CAEFEDF00E22512 /* HistoryTableViewController.swift */; };
+		87A62DE21CAEFF1100E22512 /* TrackDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62DE11CAEFF1100E22512 /* TrackDetailViewController.swift */; };
 		87FA79961CAEEBD4005E19A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FA79951CAEEBD4005E19A3 /* AppDelegate.swift */; };
 		87FA79981CAEEBD4005E19A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FA79971CAEEBD4005E19A3 /* ViewController.swift */; };
 		87FA799B1CAEEBD4005E19A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87FA79991CAEEBD4005E19A3 /* Main.storyboard */; };
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		87A62DDB1CAEFE6A00E22512 /* MeasurementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementViewController.swift; sourceTree = "<group>"; };
+		87A62DDD1CAEFEA700E22512 /* RateMeasurementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateMeasurementViewController.swift; sourceTree = "<group>"; };
+		87A62DDF1CAEFEDF00E22512 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		87A62DE11CAEFF1100E22512 /* TrackDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackDetailViewController.swift; sourceTree = "<group>"; };
 		87FA79921CAEEBD4005E19A3 /* AngryDriver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AngryDriver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87FA79951CAEEBD4005E19A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87FA79971CAEEBD4005E19A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +84,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		87A62DE31CAF022F00E22512 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				87A62DE11CAEFF1100E22512 /* TrackDetailViewController.swift */,
+				87A62DDF1CAEFEDF00E22512 /* HistoryTableViewController.swift */,
+			);
+			name = History;
+			sourceTree = "<group>";
+		};
+		87A62DE41CAF024000E22512 /* Measurement */ = {
+			isa = PBXGroup;
+			children = (
+				87A62DDB1CAEFE6A00E22512 /* MeasurementViewController.swift */,
+				87A62DDD1CAEFEA700E22512 /* RateMeasurementViewController.swift */,
+			);
+			name = Measurement;
+			sourceTree = "<group>";
+		};
 		87FA79891CAEEBD4005E19A3 = {
 			isa = PBXGroup;
 			children = (
@@ -102,10 +128,12 @@
 				87FA79951CAEEBD4005E19A3 /* AppDelegate.swift */,
 				87FA79971CAEEBD4005E19A3 /* ViewController.swift */,
 				87FA79991CAEEBD4005E19A3 /* Main.storyboard */,
-				87FA799F1CAEEBD4005E19A3 /* Assets.xcassets */,
 				87FA79A11CAEEBD4005E19A3 /* LaunchScreen.storyboard */,
+				87FA799F1CAEEBD4005E19A3 /* Assets.xcassets */,
 				87FA79A41CAEEBD4005E19A3 /* Info.plist */,
 				87FA799C1CAEEBD4005E19A3 /* AngryDriver.xcdatamodeld */,
+				87A62DE41CAF024000E22512 /* Measurement */,
+				87A62DE31CAF022F00E22512 /* History */,
 			);
 			path = AngryDriver;
 			sourceTree = "<group>";
@@ -260,9 +288,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87A62DDE1CAEFEA700E22512 /* RateMeasurementViewController.swift in Sources */,
 				87FA79981CAEEBD4005E19A3 /* ViewController.swift in Sources */,
+				87A62DE01CAEFEDF00E22512 /* HistoryTableViewController.swift in Sources */,
 				87FA799E1CAEEBD4005E19A3 /* AngryDriver.xcdatamodeld in Sources */,
 				87FA79961CAEEBD4005E19A3 /* AppDelegate.swift in Sources */,
+				87A62DDC1CAEFE6A00E22512 /* MeasurementViewController.swift in Sources */,
+				87A62DE21CAEFF1100E22512 /* TrackDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +523,7 @@
 				87FA79BF1CAEEBD4005E19A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		87FA79C01CAEEBD4005E19A3 /* Build configuration list for PBXNativeTarget "AngryDriverTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +532,7 @@
 				87FA79C21CAEEBD4005E19A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		87FA79C31CAEEBD4005E19A3 /* Build configuration list for PBXNativeTarget "AngryDriverUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +541,7 @@
 				87FA79C51CAEEBD4005E19A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
