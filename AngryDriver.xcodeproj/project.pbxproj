@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		87A62DDC1CAEFE6A00E22512 /* MeasurementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62DDB1CAEFE6A00E22512 /* MeasurementViewController.swift */; };
+		87A62DDC1CAEFE6A00E22512 /* NewRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62DDB1CAEFE6A00E22512 /* NewRideViewController.swift */; };
 		87A62DDE1CAEFEA700E22512 /* RateMeasurementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62DDD1CAEFEA700E22512 /* RateMeasurementViewController.swift */; };
 		87A62DE01CAEFEDF00E22512 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62DDF1CAEFEDF00E22512 /* HistoryTableViewController.swift */; };
-		87A62DE21CAEFF1100E22512 /* TrackDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62DE11CAEFF1100E22512 /* TrackDetailViewController.swift */; };
+		87A62DE21CAEFF1100E22512 /* RideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62DE11CAEFF1100E22512 /* RideDetailViewController.swift */; };
 		87F7917D1CAF06300015D068 /* MotionManagerSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F7917C1CAF06300015D068 /* MotionManagerSingleton.swift */; };
 		87F791821CAF377E0015D068 /* Ride+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F7917E1CAF377E0015D068 /* Ride+CoreDataProperties.swift */; };
 		87F791831CAF377E0015D068 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F7917F1CAF377E0015D068 /* Ride.swift */; };
 		87F791841CAF377E0015D068 /* Point+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F791801CAF377E0015D068 /* Point+CoreDataProperties.swift */; };
 		87F791851CAF377E0015D068 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F791811CAF377E0015D068 /* Point.swift */; };
+		87F791881CAFABB90015D068 /* TmpPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F791871CAFABB90015D068 /* TmpPoint.swift */; };
+		87F7918A1CAFB8C70015D068 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F791891CAFB8C70015D068 /* HistoryTableViewCell.swift */; };
 		87FA79961CAEEBD4005E19A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FA79951CAEEBD4005E19A3 /* AppDelegate.swift */; };
 		87FA79981CAEEBD4005E19A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FA79971CAEEBD4005E19A3 /* ViewController.swift */; };
 		87FA799B1CAEEBD4005E19A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87FA79991CAEEBD4005E19A3 /* Main.storyboard */; };
@@ -44,15 +46,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		87A62DDB1CAEFE6A00E22512 /* MeasurementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementViewController.swift; sourceTree = "<group>"; };
+		87A62DDB1CAEFE6A00E22512 /* NewRideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRideViewController.swift; sourceTree = "<group>"; };
 		87A62DDD1CAEFEA700E22512 /* RateMeasurementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateMeasurementViewController.swift; sourceTree = "<group>"; };
 		87A62DDF1CAEFEDF00E22512 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
-		87A62DE11CAEFF1100E22512 /* TrackDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackDetailViewController.swift; sourceTree = "<group>"; };
+		87A62DE11CAEFF1100E22512 /* RideDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideDetailViewController.swift; sourceTree = "<group>"; };
 		87F7917C1CAF06300015D068 /* MotionManagerSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionManagerSingleton.swift; sourceTree = "<group>"; };
 		87F7917E1CAF377E0015D068 /* Ride+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ride+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		87F7917F1CAF377E0015D068 /* Ride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
 		87F791801CAF377E0015D068 /* Point+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Point+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		87F791811CAF377E0015D068 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		87F791871CAFABB90015D068 /* TmpPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TmpPoint.swift; sourceTree = "<group>"; };
+		87F791891CAFB8C70015D068 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		87FA79921CAEEBD4005E19A3 /* AngryDriver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AngryDriver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87FA79951CAEEBD4005E19A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87FA79971CAEEBD4005E19A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,20 +101,21 @@
 		87A62DE31CAF022F00E22512 /* History */ = {
 			isa = PBXGroup;
 			children = (
-				87A62DE11CAEFF1100E22512 /* TrackDetailViewController.swift */,
+				87A62DE11CAEFF1100E22512 /* RideDetailViewController.swift */,
 				87A62DDF1CAEFEDF00E22512 /* HistoryTableViewController.swift */,
+				87F791891CAFB8C70015D068 /* HistoryTableViewCell.swift */,
 			);
 			name = History;
 			sourceTree = "<group>";
 		};
-		87A62DE41CAF024000E22512 /* Measurement */ = {
+		87A62DE41CAF024000E22512 /* NewRide */ = {
 			isa = PBXGroup;
 			children = (
-				87A62DDB1CAEFE6A00E22512 /* MeasurementViewController.swift */,
+				87A62DDB1CAEFE6A00E22512 /* NewRideViewController.swift */,
 				87F7917C1CAF06300015D068 /* MotionManagerSingleton.swift */,
 				87A62DDD1CAEFEA700E22512 /* RateMeasurementViewController.swift */,
 			);
-			name = Measurement;
+			name = NewRide;
 			sourceTree = "<group>";
 		};
 		87F791861CAF37850015D068 /* CoreData */ = {
@@ -121,6 +126,7 @@
 				87F7917F1CAF377E0015D068 /* Ride.swift */,
 				87F791801CAF377E0015D068 /* Point+CoreDataProperties.swift */,
 				87F791811CAF377E0015D068 /* Point.swift */,
+				87F791871CAFABB90015D068 /* TmpPoint.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -155,7 +161,7 @@
 				87FA799F1CAEEBD4005E19A3 /* Assets.xcassets */,
 				87FA79A41CAEEBD4005E19A3 /* Info.plist */,
 				87F791861CAF37850015D068 /* CoreData */,
-				87A62DE41CAF024000E22512 /* Measurement */,
+				87A62DE41CAF024000E22512 /* NewRide */,
 				87A62DE31CAF022F00E22512 /* History */,
 			);
 			path = AngryDriver;
@@ -313,6 +319,7 @@
 			files = (
 				87A62DDE1CAEFEA700E22512 /* RateMeasurementViewController.swift in Sources */,
 				87F791821CAF377E0015D068 /* Ride+CoreDataProperties.swift in Sources */,
+				87F7918A1CAFB8C70015D068 /* HistoryTableViewCell.swift in Sources */,
 				87FA79981CAEEBD4005E19A3 /* ViewController.swift in Sources */,
 				87F791831CAF377E0015D068 /* Ride.swift in Sources */,
 				87A62DE01CAEFEDF00E22512 /* HistoryTableViewController.swift in Sources */,
@@ -320,9 +327,10 @@
 				87FA799E1CAEEBD4005E19A3 /* AngryDriver.xcdatamodeld in Sources */,
 				87FA79961CAEEBD4005E19A3 /* AppDelegate.swift in Sources */,
 				87F791851CAF377E0015D068 /* Point.swift in Sources */,
-				87A62DDC1CAEFE6A00E22512 /* MeasurementViewController.swift in Sources */,
+				87A62DDC1CAEFE6A00E22512 /* NewRideViewController.swift in Sources */,
 				87F791841CAF377E0015D068 /* Point+CoreDataProperties.swift in Sources */,
-				87A62DE21CAEFF1100E22512 /* TrackDetailViewController.swift in Sources */,
+				87A62DE21CAEFF1100E22512 /* RideDetailViewController.swift in Sources */,
+				87F791881CAFABB90015D068 /* TmpPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

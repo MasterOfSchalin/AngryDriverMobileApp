@@ -15,7 +15,8 @@ import CoreData
 extension Ride {
 
     @NSManaged var line: String?
-    @NSManaged var rating: NSDecimalNumber?
+    @NSManaged var rating: NSNumber?
     @NSManaged var points: NSSet?
+    @NSManaged var synced: NSNumber?
 
 }

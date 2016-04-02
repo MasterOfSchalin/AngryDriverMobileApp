@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import CoreData
 
-class HistoryTableViewController: UITableViewController {
+class HistoryTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
+    var managedObjectContext: NSManagedObjectContext? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // init MOC
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        self.managedObjectContext = appDelegate.managedObjectContext
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -28,22 +35,31 @@ class HistoryTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return self.fetchedResultsController.sections?.count ?? 0
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        let sectionInfo = self.fetchedResultsController.sections![section]
+        return sectionInfo.numberOfObjects
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("HistoryCell", forIndexPath: indexPath)
 
-        // Configure the cell...
+        self.configureCell(cell, atIndexPath: indexPath)
+
 
         return cell
+    }
+    
+    func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
+        let historyCell = cell as! HistoryTableViewCell
+        let fetchedRide = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Ride
+        historyCell.ratingLabel.text = fetchedRide.rating?.description
+        historyCell.numberOfPoints?.text = fetchedRide.points?.count.description
+        historyCell.lineLabel?.text = fetchedRide.line
+
     }
     
 
@@ -91,5 +107,48 @@ class HistoryTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Fetched results controller
+    
+    
+    
+    var fetchedResultsController: NSFetchedResultsController {
+        if _fetchedResultsController != nil {
+            return _fetchedResultsController!
+        }
+        
+        let fetchRequest = NSFetchRequest()
+        // Edit the entity name as appropriate.
+        let entity = NSEntityDescription.entityForName("Ride", inManagedObjectContext: self.managedObjectContext!)
+        fetchRequest.entity = entity
+        
+        // Set the batch size to a suitable number.
+        fetchRequest.fetchBatchSize = 20
+        
+        // Edit the sort key as appropriate.
+        let sortDescriptor = NSSortDescriptor(key: "line", ascending: false)
+        
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        
+        
+        // Edit the section name key path and cache name if appropriate.
+        // nil for section name key path means "no sections".
+        let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+        aFetchedResultsController.delegate = self
+        _fetchedResultsController = aFetchedResultsController
+        
+        do {
+            try _fetchedResultsController!.performFetch()
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            //print("Unresolved error \(error), \(error.userInfo)")
+            abort()
+        }
+        
+        return _fetchedResultsController!
+    }
+    var _fetchedResultsController: NSFetchedResultsController? = nil
 
 }

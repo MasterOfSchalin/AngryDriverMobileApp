@@ -11,11 +11,12 @@
     </entity>
     <entity name="Ride" representedClassName=".Ride" syncable="YES">
         <attribute name="line" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="rating" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 16" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>
         <relationship name="points" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Point" inverseName="ride" inverseEntity="Point" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Ride" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Ride" positionX="-63" positionY="-18" width="128" height="103"/>
         <element name="Point" positionX="331" positionY="-78" width="128" height="148"/>
     </elements>
 </model>

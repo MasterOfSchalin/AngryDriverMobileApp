@@ -9,7 +9,7 @@
 import UIKit
 import CoreMotion
 
-class MeasurementViewController: UIViewController {
+class NewRideViewController: UIViewController {
 
     @IBOutlet weak var actualXAcceleration: UILabel!
     @IBOutlet weak var actualYAcceleration: UILabel!
@@ -26,6 +26,9 @@ class MeasurementViewController: UIViewController {
     var actualisationTimer: NSTimer? = nil
     
     @IBOutlet weak var startButton: UIButton!
+    
+    var measuredPoints = [TmpPoint]()
+    
     
     func initNumbers(){
         actualXAcceleration.text = "0"
@@ -50,22 +53,27 @@ class MeasurementViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if(segue.identifier == "rateRide") {
+            let controller = segue.destinationViewController as! RateMeasurementViewController
+            controller.measuredPoints = measuredPoints
+        }
     }
-    */
+    
     
     //MARK: - Measurement
 
     func update(){
         let motion:CMDeviceMotion? = MotionManagerSingleton.getMotionVector()
+        let tmpPoint = TmpPoint()
         
         if let xAcc = motion?.userAcceleration.x{
+            tmpPoint.accX = motion!.userAcceleration.x
+
             actualXAcceleration.text = (round(xAcc*1000)/1000).description
             if (abs(xAcc) > abs(maxXAcceleration)){
                 maxXAcceleration = xAcc
@@ -76,6 +84,8 @@ class MeasurementViewController: UIViewController {
         }
         
         if let yAcc = motion?.userAcceleration.y{
+            tmpPoint.accY = motion!.userAcceleration.y
+
             actualYAcceleration.text = (round(yAcc*1000)/1000).description
             if (abs(yAcc) > abs(maxYAcceleration)){
                 maxYAcceleration = yAcc
@@ -86,6 +96,8 @@ class MeasurementViewController: UIViewController {
         }
 
         if let zAcc = motion?.userAcceleration.z{
+            tmpPoint.accZ = motion!.userAcceleration.z
+
             actualZAcceleration.text = (round(zAcc*1000)/1000).description
             if (abs(zAcc) > abs(maxZAcceleration)){
                 maxZAcceleration = zAcc
@@ -95,6 +107,8 @@ class MeasurementViewController: UIViewController {
             actualZAcceleration.text = "0"
         }
 
+        measuredPoints.append(tmpPoint)
+        
         print("X: \(motion?.userAcceleration.x) Y: \(motion?.userAcceleration.y) Z: \(motion?.userAcceleration.z)")
     }
     

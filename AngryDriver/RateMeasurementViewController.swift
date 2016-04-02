@@ -7,12 +7,25 @@
 //
 
 import UIKit
+import CoreData
 
-class RateMeasurementViewController: UIViewController {
-
+class RateMeasurementViewController: UIViewController, NSFetchedResultsControllerDelegate {
+    
+    // ride points measured in previous view
+    var measuredPoints:[TmpPoint]? = nil
+    var managedObjectContext:NSManagedObjectContext? = nil
+    
+    
+    @IBOutlet weak var lineTextField: UITextField!
+    @IBOutlet weak var ratingTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // init MOC
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        self.managedObjectContext = appDelegate.managedObjectContext
+        
         // Do any additional setup after loading the view.
     }
 
@@ -24,14 +37,29 @@ class RateMeasurementViewController: UIViewController {
 
     @IBAction func save(sender: AnyObject) {
         
+        guard let lineName = lineTextField.text else {
+            lineTextField.becomeFirstResponder()
+            return
+        }
+        
+        guard let rating = ratingTextField.text else {
+            lineTextField.becomeFirstResponder()
+            return
+        }
+        
+        saveNewRide(lineName, rating: Int(rating)!, points: measuredPoints!)
         
         
-        dismissViewControllerAnimated(true, completion: nil)
+        goToMainView()
+    }
+    
+    func goToMainView(){
+        UIApplication.sharedApplication().keyWindow?.rootViewController?.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     
     @IBAction func cancel(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+        goToMainView()
     }
     
     /*
@@ -43,5 +71,30 @@ class RateMeasurementViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //MARK: - CoreData
+    
+    func saveNewRide(line: String, rating: Int, points: [TmpPoint]){
+
+        let newRide = Ride.createRide(line, rating: rating)
+        
+        for point in points{
+            // save only in case the point contains reasonable data
+            if ((point.accX) != nil){
+                let newPoint = Point.createPoint(point)
+                newPoint.ride = newRide
+            }
+        }
+        
+        // Save the context.
+        do {
+            try self.managedObjectContext!.save()
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            // print("Unresolved error \(error), \(error.userInfo)")
+            abort()
+        }
+    }
 
 }
