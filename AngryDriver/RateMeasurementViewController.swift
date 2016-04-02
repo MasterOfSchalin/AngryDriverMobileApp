@@ -23,12 +23,15 @@ class RateMeasurementViewController: UIViewController {
     
 
     @IBAction func save(sender: AnyObject) {
-    
+        
+        
+        
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     
     @IBAction func cancel(sender: AnyObject) {
-    
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     /*

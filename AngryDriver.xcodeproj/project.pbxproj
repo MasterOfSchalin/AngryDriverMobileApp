@@ -11,6 +11,11 @@
 		87A62DDE1CAEFEA700E22512 /* RateMeasurementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62DDD1CAEFEA700E22512 /* RateMeasurementViewController.swift */; };
 		87A62DE01CAEFEDF00E22512 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62DDF1CAEFEDF00E22512 /* HistoryTableViewController.swift */; };
 		87A62DE21CAEFF1100E22512 /* TrackDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62DE11CAEFF1100E22512 /* TrackDetailViewController.swift */; };
+		87F7917D1CAF06300015D068 /* MotionManagerSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F7917C1CAF06300015D068 /* MotionManagerSingleton.swift */; };
+		87F791821CAF377E0015D068 /* Ride+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F7917E1CAF377E0015D068 /* Ride+CoreDataProperties.swift */; };
+		87F791831CAF377E0015D068 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F7917F1CAF377E0015D068 /* Ride.swift */; };
+		87F791841CAF377E0015D068 /* Point+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F791801CAF377E0015D068 /* Point+CoreDataProperties.swift */; };
+		87F791851CAF377E0015D068 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F791811CAF377E0015D068 /* Point.swift */; };
 		87FA79961CAEEBD4005E19A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FA79951CAEEBD4005E19A3 /* AppDelegate.swift */; };
 		87FA79981CAEEBD4005E19A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FA79971CAEEBD4005E19A3 /* ViewController.swift */; };
 		87FA799B1CAEEBD4005E19A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87FA79991CAEEBD4005E19A3 /* Main.storyboard */; };
@@ -43,6 +48,11 @@
 		87A62DDD1CAEFEA700E22512 /* RateMeasurementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateMeasurementViewController.swift; sourceTree = "<group>"; };
 		87A62DDF1CAEFEDF00E22512 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		87A62DE11CAEFF1100E22512 /* TrackDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackDetailViewController.swift; sourceTree = "<group>"; };
+		87F7917C1CAF06300015D068 /* MotionManagerSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionManagerSingleton.swift; sourceTree = "<group>"; };
+		87F7917E1CAF377E0015D068 /* Ride+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ride+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		87F7917F1CAF377E0015D068 /* Ride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
+		87F791801CAF377E0015D068 /* Point+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Point+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		87F791811CAF377E0015D068 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		87FA79921CAEEBD4005E19A3 /* AngryDriver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AngryDriver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87FA79951CAEEBD4005E19A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87FA79971CAEEBD4005E19A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,9 +107,22 @@
 			isa = PBXGroup;
 			children = (
 				87A62DDB1CAEFE6A00E22512 /* MeasurementViewController.swift */,
+				87F7917C1CAF06300015D068 /* MotionManagerSingleton.swift */,
 				87A62DDD1CAEFEA700E22512 /* RateMeasurementViewController.swift */,
 			);
 			name = Measurement;
+			sourceTree = "<group>";
+		};
+		87F791861CAF37850015D068 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				87FA799C1CAEEBD4005E19A3 /* AngryDriver.xcdatamodeld */,
+				87F7917E1CAF377E0015D068 /* Ride+CoreDataProperties.swift */,
+				87F7917F1CAF377E0015D068 /* Ride.swift */,
+				87F791801CAF377E0015D068 /* Point+CoreDataProperties.swift */,
+				87F791811CAF377E0015D068 /* Point.swift */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 		87FA79891CAEEBD4005E19A3 = {
@@ -131,7 +154,7 @@
 				87FA79A11CAEEBD4005E19A3 /* LaunchScreen.storyboard */,
 				87FA799F1CAEEBD4005E19A3 /* Assets.xcassets */,
 				87FA79A41CAEEBD4005E19A3 /* Info.plist */,
-				87FA799C1CAEEBD4005E19A3 /* AngryDriver.xcdatamodeld */,
+				87F791861CAF37850015D068 /* CoreData */,
 				87A62DE41CAF024000E22512 /* Measurement */,
 				87A62DE31CAF022F00E22512 /* History */,
 			);
@@ -289,11 +312,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				87A62DDE1CAEFEA700E22512 /* RateMeasurementViewController.swift in Sources */,
+				87F791821CAF377E0015D068 /* Ride+CoreDataProperties.swift in Sources */,
 				87FA79981CAEEBD4005E19A3 /* ViewController.swift in Sources */,
+				87F791831CAF377E0015D068 /* Ride.swift in Sources */,
 				87A62DE01CAEFEDF00E22512 /* HistoryTableViewController.swift in Sources */,
+				87F7917D1CAF06300015D068 /* MotionManagerSingleton.swift in Sources */,
 				87FA799E1CAEEBD4005E19A3 /* AngryDriver.xcdatamodeld in Sources */,
 				87FA79961CAEEBD4005E19A3 /* AppDelegate.swift in Sources */,
+				87F791851CAF377E0015D068 /* Point.swift in Sources */,
 				87A62DDC1CAEFE6A00E22512 /* MeasurementViewController.swift in Sources */,
+				87F791841CAF377E0015D068 /* Point+CoreDataProperties.swift in Sources */,
 				87A62DE21CAEFF1100E22512 /* TrackDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,10 +467,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AngryDriver/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mendelu.AngryDriver.AngryDriver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -451,10 +481,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AngryDriver/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mendelu.AngryDriver.AngryDriver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
