@@ -54,7 +54,7 @@ class RateMeasurementViewController: UIViewController, NSFetchedResultsControlle
     }
     
     func goToMainView(){
-        UIApplication.sharedApplication().keyWindow?.rootViewController?.navigationController?.popToRootViewControllerAnimated(true)
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     
