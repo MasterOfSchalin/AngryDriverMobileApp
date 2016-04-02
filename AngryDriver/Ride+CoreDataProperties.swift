@@ -16,7 +16,7 @@ extension Ride {
 
     @NSManaged var line: String?
     @NSManaged var rating: NSNumber?
-    @NSManaged var points: NSSet?
+    @NSManaged var points: Set<Point>?
     @NSManaged var synced: NSNumber?
 
 }

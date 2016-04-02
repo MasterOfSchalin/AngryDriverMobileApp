@@ -22,6 +22,7 @@ class Ride: NSManagedObject {
         
         let tmpRide = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedObjectContext) as! Ride
         
+        tmpRide.synced = false
         tmpRide.line = line
         tmpRide.rating = rating
         

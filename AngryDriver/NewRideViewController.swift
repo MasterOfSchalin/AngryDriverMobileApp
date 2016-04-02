@@ -8,9 +8,13 @@
 
 import UIKit
 import CoreMotion
+import CoreLocation
 
-class NewRideViewController: UIViewController {
+class NewRideViewController: UIViewController, CLLocationManagerDelegate {
 
+    var locationManager :CLLocationManager!
+    var lastLocation: CLLocation?
+    
     @IBOutlet weak var actualXAcceleration: UILabel!
     @IBOutlet weak var actualYAcceleration: UILabel!
     @IBOutlet weak var actualZAcceleration: UILabel!
@@ -40,16 +44,22 @@ class NewRideViewController: UIViewController {
         maximalZAcceleration.text = "0"
     }
     
+    func initLocation(){
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initNumbers()
-
-        // Do any additional setup after loading the view.
+        initLocation()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
@@ -62,6 +72,13 @@ class NewRideViewController: UIViewController {
             let controller = segue.destinationViewController as! RateMeasurementViewController
             controller.measuredPoints = measuredPoints
         }
+    }
+    
+    //MARK: - GPS
+    
+    func locationManager(manager: CLLocationManager , didUpdateLocations locations: [CLLocation]) {
+        lastLocation = locations.first
+        print("Location")
     }
     
     
@@ -106,6 +123,9 @@ class NewRideViewController: UIViewController {
         } else {
             actualZAcceleration.text = "0"
         }
+        tmpPoint.lat = lastLocation?.coordinate.latitude ?? 0.0
+        tmpPoint.lon = lastLocation?.coordinate.longitude ?? 0.0
+        tmpPoint.timestamp = NSDate()
 
         measuredPoints.append(tmpPoint)
         

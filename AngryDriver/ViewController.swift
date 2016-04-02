@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
 
@@ -28,11 +29,13 @@ class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
 
 
     @IBAction func syncData(sender: AnyObject) {
-        
+        print("Hooooooo XXX")
+
         let rides = self.fetchedResultsController.fetchedObjects as! [Ride]
         for ride in rides{
+            print("Hooooooo")
             sendToServer(ride)
-            ride.synced = false
+            //ride.synced = true
         }
         
         do {
@@ -45,8 +48,33 @@ class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
         }
     }
     
+    
     func sendToServer(ride: Ride){
+        var ref = Firebase(url: "https://vivid-torch-6344.firebaseio.com/")
+        var rideRef = ref.childByAutoId()
         
+        var pointRecords = [[String: String]]()
+        
+        if let points = ride.points {
+            
+            for point in points {
+                var pointRecord = [String: String]()
+                pointRecord["lat"] = point.lat!.description
+                pointRecord["lon"] = point.lon!.description
+                pointRecord["accX"] = point.accX!.description
+                pointRecord["accY"] = point.accY!.description
+                pointRecord["accZ"] = point.accZ!.description
+                pointRecord["timestamp"] = point.timestamp!.description
+                pointRecords.append(pointRecord)
+            }
+            
+            var rideValues = ["user": "kreten", "line" : ride.line!, "rating": ride.rating!.description, "points" : pointRecords ]
+            rideRef.setValue(rideValues)
+        } else {
+        
+            var rideValues = ["user": "kreten", "line" : ride.line!, "rating": ride.rating!.description]
+            rideRef.setValue(rideValues)
+        }
     }
     
     
